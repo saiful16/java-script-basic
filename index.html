@@ -1,33 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom Start</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        li{
+        li {
             color: tomato;
+        }
+
+        #fruits-title {
+            color: black;
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Welcome to Dom</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id amet eligendi repellat enim. Consectetur hic
+            corporis accusantium consequatur error necessitatibus pariatur. Tempora doloremque dicta quaerat
+            reprehenderit quae at fugiat fuga!</p>
     </header>
     <main>
-        <h1>My Awesome Dom</h1>
-        <ul>
-            <li>Prince</li>
-            <li>King</li>
-            <li>Queen</li>
-        </ul>
+        <section class="family-container">
+            <h1 >My Awesome Dom</h1>
+            <ul>
+                <li>Prince</li>
+                <li>King</li>
+                <li>Queen</li>
+            </ul>
+        </section>
+        <section id="fruits-container">
+            <h1 id="fruits-title">Fruits I like</h1>
+            <ul>
+                <li>Apple</li>
+                <li>Orange</li>
+                <li>Banana</li>
+            </ul>
+        </section>
+
+        <section id="place-container">
+            <h1 id="places-title" class=" place visited-place most-visited ">Places i Like to Visit</h1>
+            <ul id="places-list">
+                <li class="important-places">Spain</li>
+                <li class="important-places">Italy</li>
+                <li class="important-places">France</li>
+                <li>Italy</li>
+            </ul>
+        </section>
     </main>
     <script src="dom.js"></script>
     <script>
+
+        // get elements by tag name
         // console.log("adding from inside of a html file");
         const liCollection = document.getElementsByTagName('li');
-        console.log(liCollection);
+        // console.log(liCollection);
+        for (const li of liCollection) {
+            // console.log(li.innerText);
+
+        }
+        const allHeadings = document.getElementsByTagName('h1')
+        for (const h1 of allHeadings) {
+            // console.log(h1.innerText)
+        }
+
+        // get element by id
+        document.getElementById('fruits-title').innerText = 'Want to vist in future';
+        document.getElementById('places-title').innerText = 'Want to vist in future';
+
+
+        // get elements by class name
+        const places = document.getElementsByClassName('important-places');
+        // console.log('places')
+
+        for(const place of places){
+            // console.log(place)
+            // console.log(place.innerText)
+        }
+        // query selector all 
+        const familyLi = document.querySelectorAll('.family-container li')
+
+
+        // query seclector
+        const familyLi1 = document.querySelector('.family-container li')
+        // console.log(familyLi1)
+        for(const li of familyLi){
+            // console.log(li.innerText)
+        }
+        document.getElementById('fruits-title').style.color='red'
+        document.getElementById('fruits-title').style.backgroundColor= 'yellow'
+
+        // const title = document.getElementById('places-title')
+        // console.log(title.getAttribute('id'))
+        // console.log(title.classList)
+        // title.classList.remove('place')
+        // console.log(title.classList)
+        // title.classList.add('often-visited-place')
+        // console.log(title.classList)
+        // title.setAttribute('title', 'tool tip by java script')
+        const famil =document.getElementsByClassName('family-container')
+        // console.log(famil[0].innerHTML = '<h2> wow dom is changind </h2>')
+
+
     </script>
 </body>
+
 </html>
