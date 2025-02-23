@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+    <style>
+        body {
+            border: 2px solid black;
+            margin: 3px;
+            padding: 3px;
+        }
+
+        section {
+            border: 2px solid blue;
+            margin: 3px;
+            padding: 3px;
+        }
+
+        h3 {
+            border: 2px solid black;
+            margin: 3px;
+            padding: 3px;
+        }
+
+        ol {
+            border: 2px solid green;
+            margin: 3px;
+            padding: 3px;
+        }
+        li {
+            border: 2px solid red;
+            margin: 3px;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body id="main-body">
+    <h1>Explore event Bubble</h1>
+    <section id="section">
+
+        <h3>list of things</h3>
+
+        <ol id="list-container">
+            <li id="list-1">Lorem, ipsum.</li>
+            <li id="list-2">Voluptatum, perferendis?</li>
+            <li id="list-3">Animi, nemo?</li>
+            <li id="list-4">Aperiam, laboriosam.</li>
+            <li id="list-5">Optio, ad!</li>
+            <li id="list-6">Consectetur, maiores?</li>
+        </ol>
+
+    </section>
+
+    <script>
+        document.getElementById('list-2').addEventListener('click', function(event){
+            console.log("li-2 clicked")
+            event.stopPropagation()
+        })
+        document.getElementById('list-2').addEventListener('click', function(e){
+            console.log("li-2 2nd clicked")
+            e.stopImmediatePropagation()
+        })
+        document.getElementById('list-2').addEventListener('click', function(){
+            console.log("li-2 3rd clicked")
+        })
+        document.getElementById('list-container').addEventListener('click', function(){
+            console.log("list container clicked")
+        })
+        document.getElementById('section').addEventListener('click', function(){
+            console.log("section clicked")
+        })
+        document.getElementById('main-body').addEventListener('click', function(){
+            console.log("body clicked")
+        })
+       
+    </script>
+</body>
+
+</html>

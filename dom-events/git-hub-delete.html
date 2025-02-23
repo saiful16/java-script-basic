@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Delete Button</title>
+</head>
+<body>
+    <h1 id="secret-id">My simple GitHub delete button</h1>
+    <input type="text" name="" id="delete-text" placeholder="enter delete">
+    <button id="btn-delete" disabled>delete</button>
+
+    <script>
+        // document.getElementById('delete-text').addEventListener('keyup', function(){
+        //     const userInput = document.getElementById('delete-text').value
+        //     // console.log(userInput)
+        //     if(userInput === 'delete'){
+        //         document.getElementById('btn-delete').removeAttribute('disabled')
+        //     }
+        //     else{
+        //         document.getElementById('btn-delete').setAttribute('disabled', true)
+        //     }
+        // })
+
+        document.getElementById('delete-text').addEventListener('keyup', function(event){
+            const userInput = event.target.value
+            const disabledBtn = document.getElementById('btn-delete');
+            // console.log(userInput )
+            if(userInput === 'delete'){
+                disabledBtn.removeAttribute('disabled')
+                disabledBtn.addEventListener('click',function(){
+                    const secretText = document.getElementById('secret-id')
+                    secretText.style.display = 'none'
+                })
+            }
+            else{
+                disabledBtn.setAttribute('disabled', true)
+                const secretText = document.getElementById('secret-id')
+                    secretText.style.display = 'block'
+            }
+        })
+    </script>
+</body>
+</html>

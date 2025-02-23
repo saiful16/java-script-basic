@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More events</title>
+</head>
+<body>
+    <button id="btn-evets">Button events</button>
+    <input type="text" id="user-name" placeholder="Enter your name">
+    <input type="text" id="user-email" placeholder="Enter your email">
+
+
+    <script>
+        // document.getElementById('btn-evets').addEventListener('mouseenter', function(){
+        //     console.log('btjld enter')
+        // })
+        // document.getElementById('btn-evets').addEventListener('mouseover', function(){
+        //     console.log('btjld enter')
+        // })
+        // document.getElementById('btn-evets').addEventListener('mousemove', function(){
+        //     console.log('btjld enter')
+        // })
+        // document.getElementById('btn-evets').addEventListener('mouseout', function(){
+        //     console.log('btjld enter')
+        // })
+
+        // document.getElementById('user-name').addEventListener('focus',function(){
+        //     console.log('user about to write')
+        // })
+        // document.getElementById('user-name').addEventListener('keyup',function(){
+        //     console.log()
+        // })
+        // document.getElementById('user-email').addEventListener('keydown',function(e){
+        //     console.log('user about to write email',e.target.value)
+        // })
+        document.getElementById('user-email').addEventListener('keyup',function(e){
+            console.log('user about to write email',e.target.value)
+        })
+
+    </script>
+</body>
+</html>
