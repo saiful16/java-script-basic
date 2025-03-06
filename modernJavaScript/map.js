@@ -25,5 +25,5 @@ const newFriends = friends.map((element, index)=>{
 
 })
 
-/**The map() method in JavaScript is used to create a new array by applying a callback function to each element of an existing array. It does not modify the original array but instead returns a transformed array. The callback function takes three arguments: the current element, its index, and the array itself.17 Dec 2024
+/**The map() method in JavaScript is used to create a new array by applying a callback function to each element of an existing array. It does not modify the original array but instead returns a transformed array. The callback function takes three arguments: the current element, its index, and the array itself
  */
