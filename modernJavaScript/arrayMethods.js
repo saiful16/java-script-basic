@@ -23,6 +23,7 @@ const newProduct = products.filter(product => product.price > 1000)
 // console.log(newProduct)
 
 // find will return the 1st value that match in the condition.
+// it will return value as an object.
 const secondProduct = products.find(product => product.id === 4)
 console.log(typeof secondProduct)
 
